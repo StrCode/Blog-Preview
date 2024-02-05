@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Figtree-ExtraBold";
+  src: url(/assets/fonts/static/Figtree-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "Figtree-SemiBold";
+  src: url(/assets/fonts/static/Figtree-SemiBold.ttf);
+}
 :root {
-  --font-figtree: "Inter";
+  --font-figtreeXBold: "Figtree-ExtraBold";
+  --font-figtreeSBold: "Figtree-SemiBold";
 }
