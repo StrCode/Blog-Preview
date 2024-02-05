@@ -19,6 +19,12 @@ function scssTask() {
     .pipe(dest("dist", { sourcemaps: "." }));
 }
 
+function fonts() {
+  return src("assets/fonts/**/*.{eot,svg,ttf,woff,woff2}").pipe(
+    dest("dist/fonts")
+  );
+}
+
 // JavaScript Task
 function jsTask() {
   return src("app/js/script.js", { sourcemaps: true })
@@ -57,7 +63,7 @@ function watchTask() {
 }
 
 // Default Gulp Task
-exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
+exports.default = series(scssTask, jsTask, fonts, browserSyncServe, watchTask);
 
 // Build Gulp Task
-exports.build = series(scssTask, jsTask);
+exports.build = series(scssTask, jsTask, fonts);
